@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cmd="$(basename $0)"
+exec docker run -it --rm --mount "type=bind,source=$PWD,destination=/csv" filefrog/csvkit $cmd "$@"
